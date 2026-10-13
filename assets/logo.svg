@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="GDPR Audit">
+  <!-- Bouclier : protection des données -->
+  <path d="M60 6 L106 22 V56 C106 86 86 104 60 114 C34 104 14 86 14 56 V22 Z"
+        fill="#1D4ED8" stroke="#0A0A0A" stroke-width="4" stroke-linejoin="round"/>
+
+  <!-- Document audité -->
+  <path d="M34 28 H64 L76 40 V82 H34 Z" fill="#FFFFFF" stroke="#0A0A0A" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M64 28 V40 H76" fill="none" stroke="#0A0A0A" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="41" y="45" width="20" height="3.5" rx="1.75" fill="#0A0A0A"/>
+  <rect x="41" y="53" width="26" height="3.5" rx="1.75" fill="#0A0A0A"/>
+  <rect x="41" y="61" width="14" height="3.5" rx="1.75" fill="#0A0A0A"/>
+
+  <!-- Loupe avec validation : l'audit -->
+  <line x1="76" y1="82" x2="85" y2="91" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
+  <line x1="76" y1="82" x2="85" y2="91" stroke="#0A0A0A" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="67" cy="73" r="14" fill="#FFFFFF" stroke="#0A0A0A" stroke-width="4"/>
+  <path d="M60.5 73 L65 77.5 L74 67.5" fill="none" stroke="#1D4ED8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

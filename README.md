@@ -1,74 +1,76 @@
 <div align="center">
 
-# 🛡️ GDPR Audit
+<img src="assets/logo.svg" alt="Logo GDPR Audit" width="140">
 
-### Assistant d'audit RGPD propulsé par l'IA
+# GDPR Audit
 
-*Posez vos questions, auditez vos documents, suivez la veille réglementaire.*
+**Assistant d'audit RGPD propulsé par l'IA**
 
-![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![RAG](https://img.shields.io/badge/IA-RAG-8A2BE2?style=for-the-badge)
-![Figma](https://img.shields.io/badge/Design-Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
-![Statut](https://img.shields.io/badge/Statut-En%20développement-orange?style=for-the-badge)
+Posez vos questions, auditez vos documents, suivez la veille réglementaire.
 
-[Présentation](#-présentation) •
-[Fonctionnalités](#-fonctionnalités) •
-[Architecture](#-architecture) •
-[Feuille de route](#-feuille-de-route) •
-[Installation](#-installation)
+![Python](https://img.shields.io/badge/Python-3.11+-1D4ED8?style=flat-square&logo=python&logoColor=white)
+![RAG](https://img.shields.io/badge/IA-RAG-0A0A0A?style=flat-square)
+![Figma](https://img.shields.io/badge/Design-Figma-0A0A0A?style=flat-square&logo=figma&logoColor=white)
+![Statut](https://img.shields.io/badge/Statut-En%20développement-1D4ED8?style=flat-square)
+
+[Présentation](#présentation) ·
+[Fonctionnalités](#fonctionnalités) ·
+[Architecture](#architecture) ·
+[Feuille de route](#feuille-de-route) ·
+[Installation](#installation)
 
 </div>
 
 ---
 
-## 📖 Présentation
+## Présentation
 
 **GDPR Audit** est un outil d'aide à la mise en conformité RGPD. Il repose sur un système de **RAG** (*Retrieval-Augmented Generation*) : les réponses de l'IA s'appuient sur un corpus de textes juridiques officiels et **citent leurs sources**, ce qui limite les hallucinations.
 
-> 🎓 **Projet d'apprentissage** : chaque brique est construite à partir de la documentation officielle, pas à pas.
+> **Projet d'apprentissage** : chaque brique est construite à partir de la documentation officielle, pas à pas.
 
 ---
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 
 <table>
 <tr>
 <td width="33%" valign="top">
 
-### 📰 Veille
+### Veille
 Dernières décisions de la **CNIL** et du **CEPD**, et actualité de la protection des données et de l'**AI Act**, filtrées et résumées par l'IA.
 
 </td>
 <td width="33%" valign="top">
 
-### 📄 Audit de document
+### Audit de document
 Déposez une politique de confidentialité, un contrat ou un registre de traitement : l'outil identifie les **manquements** et cite les articles concernés.
 
 </td>
 <td width="33%" valign="top">
 
-### 💬 Chatbot RGPD
+### Chatbot RGPD
 Posez une question en langage naturel et obtenez une réponse **sourcée**, fondée sur les textes de référence.
 
 </td>
 </tr>
 </table>
 
-### 🖥️ Aperçu de l'interface
+### Aperçu de l'interface
 
 ```
 ┌──────────────────────┬────────────────────────────────────────────┐
-│  📰 VEILLE           │                                            │
+│  VEILLE              │                                            │
 │  • Décision CNIL …   │                                            │
-│  • Avis CEPD …       │              💬 CHATBOT RGPD               │
+│  • Avis CEPD …       │                CHATBOT RGPD                │
 │  • AI Act …          │                                            │
 ├──────────────────────┤   > Quelle base légale pour la prospection │
-│  📄 AUDIT            │     commerciale par e-mail ?               │
+│  AUDIT               │     commerciale par e-mail ?               │
 │                      │                                            │
 │   ┌──────────────┐   │   Réponse sourcée … [Art. 6 RGPD]          │
 │   │ Déposer un   │   │                                            │
 │   │   fichier    │   │                                            │
-│   └──────────────┘   │   [ Posez votre question…           ➤ ]    │
+│   └──────────────┘   │   [ Posez votre question…           > ]    │
 └──────────────────────┴────────────────────────────────────────────┘
 ```
 
@@ -76,7 +78,7 @@ Posez une question en langage naturel et obtenez une réponse **sourcée**, fond
 
 ---
 
-## 📚 Corpus de référence
+## Corpus de référence
 
 | Texte | Source |
 |---|---|
@@ -88,29 +90,29 @@ Posez une question en langage naturel et obtenez une réponse **sourcée**, fond
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```mermaid
 flowchart LR
     subgraph Ingestion
-        A[📁 Corpus] --> B[Extraction du texte]
+        A[Corpus] --> B[Extraction du texte]
         B --> C[Découpage en chunks]
         C --> D[Embeddings]
         D --> E[(Base vectorielle)]
     end
 
     subgraph Utilisation
-        Q[💬 Question] --> R[Recherche]
-        F[📄 Fichier à auditer] --> R
+        Q[Question] --> R[Recherche]
+        F[Fichier à auditer] --> R
         E --> R
         R --> P[Prompt + contexte]
-        P --> L[🤖 LLM]
+        P --> L[LLM]
         L --> S[Réponse sourcée / Rapport]
     end
 
     subgraph Veille
         V1[Flux CNIL / CEPD / AI Act] --> V2[Filtrage IA]
-        V2 --> V3[📰 Fil d'actualité]
+        V2 --> V3[Fil d'actualité]
     end
 ```
 
@@ -123,7 +125,7 @@ flowchart LR
 | **API** | Exposer les routes `/chat`, `/audit` et `/news` |
 | **Front** | Interface conçue sur Figma |
 
-### 🤔 Décisions à prendre
+### Décisions à prendre
 
 - [ ] **Stack front** : Streamlit/Gradio (rapide) ou FastAPI + front séparé (fidèle à la maquette)
 - [ ] **Fichier audité** : ajouté au corpus ou traité à part ?
@@ -133,27 +135,27 @@ flowchart LR
 
 ---
 
-## 🗺️ Feuille de route
+## Feuille de route
 
 | | Phase | Statut |
 |:-:|---|:-:|
-| 0 | Mise en place du projet | 🟡 En cours |
-| 1 | Conception sur papier | ⚪ À faire |
-| 2 | Wireframe Figma | ⚪ À faire |
-| 3 | Ingestion du corpus | ⚪ À faire |
-| 4 | RAG en ligne de commande | ⚪ À faire |
-| 5 | Audit de document | ⚪ À faire |
-| 6 | Veille réglementaire | ⚪ À faire |
-| 7 | API | ⚪ À faire |
-| 8 | Maquette Figma finale | ⚪ À faire |
-| 9 | Front | ⚪ À faire |
-| 10 | Finitions | ⚪ À faire |
+| 0 | Mise en place du projet | En cours |
+| 1 | Conception sur papier | À faire |
+| 2 | Wireframe Figma | À faire |
+| 3 | Ingestion du corpus | À faire |
+| 4 | RAG en ligne de commande | À faire |
+| 5 | Audit de document | À faire |
+| 6 | Veille réglementaire | À faire |
+| 7 | API | À faire |
+| 8 | Maquette Figma finale | À faire |
+| 9 | Front | À faire |
+| 10 | Finitions | À faire |
 
 <details>
 <summary><b>Phase 0 : Mise en place du projet</b></summary>
 
 - [x] Créer le dépôt GitHub
-- [ ] Relier le dossier local au dépôt
+- [x] Relier le dossier local au dépôt
 - [ ] Créer le `.gitignore` (exclure `.env`, l'environnement virtuel et la base vectorielle)
 - [ ] Créer un environnement virtuel Python
 - [ ] Créer `requirements.txt` ou `pyproject.toml`
@@ -162,7 +164,7 @@ flowchart LR
 - [ ] Organiser l'arborescence par bloc logique
 - [ ] Renommer les fichiers selon la PEP 8
 
-📚 *PEP 8 (Naming Conventions), doc de `venv`, doc de Git*
+*Docs : PEP 8 (Naming Conventions), `venv`, Git*
 </details>
 
 <details>
@@ -180,7 +182,7 @@ flowchart LR
 - [ ] Prévoir les états : vide, chargement, erreur, résultat
 - [ ] Choisir la stack front à partir du wireframe
 
-📚 *help.figma.com : Frames, Auto Layout*
+*Docs : help.figma.com (Frames, Auto Layout)*
 </details>
 
 <details>
@@ -191,7 +193,7 @@ flowchart LR
 - [ ] Découper le texte en chunks en conservant les métadonnées (source, article, page)
 - [ ] Générer les embeddings et les stocker dans la base vectorielle
 
-📚 *Chunking strategies, doc ChromaDB, doc de la librairie PDF choisie*
+*Docs : chunking strategies, ChromaDB, librairie PDF choisie*
 </details>
 
 <details>
@@ -202,7 +204,7 @@ flowchart LR
 - [ ] Appeler le LLM et afficher la réponse avec ses sources
 - [ ] Tester sur une dizaine de questions dont la réponse est connue
 
-📚 *Doc du fournisseur de LLM, « prompt engineering », « RAG evaluation »*
+*Docs : fournisseur du LLM, prompt engineering, RAG evaluation*
 </details>
 
 <details>
@@ -222,7 +224,7 @@ flowchart LR
 - [ ] Filtrer et résumer les articles avec l'IA
 - [ ] Mettre les résultats en cache
 
-📚 *Doc `feedparser`, sites cnil.fr et edpb.europa.eu*
+*Docs : `feedparser`, cnil.fr, edpb.europa.eu*
 </details>
 
 <details>
@@ -232,7 +234,7 @@ flowchart LR
 - [ ] Gérer les erreurs et valider les entrées
 - [ ] Tester les routes avec la doc interactive
 
-📚 *Tutoriel FastAPI, section Request Files*
+*Docs : tutoriel FastAPI, section Request Files*
 </details>
 
 <details>
@@ -242,7 +244,7 @@ flowchart LR
 - [ ] Créer les composants : carte de news, bulle de chat, zone de dépôt, rapport
 - [ ] Préparer la maquette pour le Dev Mode
 
-📚 *help.figma.com : Components, Variables, Dev Mode*
+*Docs : help.figma.com (Components, Variables, Dev Mode)*
 </details>
 
 <details>
@@ -264,20 +266,12 @@ flowchart LR
 
 ---
 
-## ⚙️ Installation
+## Installation
 
-> 🚧 *Section à compléter au fil du développement.*
+*Section à compléter au fil du développement.*
 
 ---
 
-## ⚠️ Avertissement
+## Avertissement
 
 Cet outil est une **aide à l'analyse** et ne constitue **pas un conseil juridique**. Ses résultats doivent être vérifiés par un professionnel qualifié (DPO, juriste, avocat).
-
----
-
-<div align="center">
-
-*Fait avec ☕ dans le cadre d'un projet d'apprentissage.*
-
-</div>

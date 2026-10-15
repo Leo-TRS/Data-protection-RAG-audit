@@ -1,0 +1,33 @@
+# --- Secrets (clés d'API) : ne JAMAIS les pousser ---
+.env
+.env.*
+!.env.example
+
+# --- Environnement virtuel ---
+.venv/
+venv/
+
+# --- Fichiers générés par Python ---
+__pycache__/
+*.py[cod]
+
+# --- Tests ---
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- Données générées par le projet ---
+# Base vectorielle (recréée par indexer.py)
+chroma_db/
+vector_store/
+# Fichiers déposés par les utilisateurs pour un audit
+uploads/
+
+# --- Fichiers Figma lourds (le design vit sur figma.com) ---
+*.fig
+*.zip
+
+# --- Éditeurs et système ---
+.vscode/
+.idea/
+.DS_Store

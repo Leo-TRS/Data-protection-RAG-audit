@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="assets/logo.svg" alt="Logo GDPR Audit" width="140">
+<img src="assets/logo.svg" alt="Logo Data Protection RAG Audit" width="140">
 
-# GDPR Audit
+# Data Protection RAG Audit
 
-**Assistant d'audit RGPD propulsé par l'IA**
+**Assistant d'audit en protection des données propulsé par l'IA**
 
 Posez vos questions, auditez vos documents, suivez la veille réglementaire.
 
@@ -25,7 +25,7 @@ Posez vos questions, auditez vos documents, suivez la veille réglementaire.
 
 ## Présentation
 
-**GDPR Audit** est un outil d'aide à la mise en conformité en matière de protection des données. Il repose sur un système de **RAG** (*Retrieval-Augmented Generation*) : les réponses de l'IA s'appuient sur un corpus de textes juridiques officiels et **citent leurs sources** (texte et article), ce qui limite les hallucinations.
+**Data Protection RAG Audit** est un outil d'aide à la mise en conformité en matière de protection des données. Il repose sur un système de **RAG** (*Retrieval-Augmented Generation*) : les réponses de l'IA s'appuient sur un corpus de textes juridiques officiels et **citent leurs sources** (texte et article), ce qui limite les hallucinations.
 
 La protection des données ne repose pas uniquement sur le RGPD : l'outil couvre à terme le **RGPD**, la **Loi Informatique et Libertés** et l'**AI Act**.
 
@@ -133,7 +133,7 @@ flowchart LR
 ### Structure du projet
 
 ```
-GDPR_AUDIT_V2/
+Data-protection-RAG-audit/
 ├── assets/          logo
 ├── corpus/          textes de référence (PDF)
 ├── figma/           exports de la maquette
@@ -353,8 +353,8 @@ Pourquoi : un article est une unité de sens définie par le législateur, et le
 ## Installation
 
 ```bash
-git clone https://github.com/Leo-TRS/GDPR_auditor_V2.git
-cd GDPR_auditor_V2
+git clone https://github.com/Leo-TRS/Data-protection-RAG-audit.git
+cd Data-protection-RAG-audit
 python3 -m venv .venv
 source .venv/bin/activate
 pip install pdfplumber
